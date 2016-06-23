@@ -1,0 +1,45 @@
+.chart {
+}
+
+.main text {
+    font: 10px sans-serif;
+}
+
+text.light {
+    fill: black;
+}
+
+text.dark {
+    fill: white;
+}
+
+.axis line, .axis path {
+    stroke: black;
+    fill: none;
+}
+
+body.light {
+    background-color: white;
+}
+
+body.dark {
+    background-color: #23221d;
+}
+
+circle.light {
+    fill: red;
+    stroke: red;
+}
+
+circle.dark {
+    fill: orange;
+    stroke: orange;
+}
+
+path.light {
+    stroke: black;
+}
+
+path.dark {
+    stroke: white;
+}
