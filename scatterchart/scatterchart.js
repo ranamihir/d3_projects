@@ -1,9 +1,9 @@
 var data = [];
 
-var e = json_data.series['Series 1'].points
+var e = json_data.series["Series 1"].points;
 
 for(var i = 0; i < e.length; i++) {
-    data.push([e[i].coordinates[0], e[i].coordinates[1], Math.abs(e[i].coordinates[0] - e[i].coordinates[1])]);
+  data.push([e[i].coordinates[0], e[i].coordinates[1], Math.abs(e[i].coordinates[0] - e[i].coordinates[1])]);
 }
 
 visualize_scatterchart(data);
