@@ -1,0 +1,104 @@
+body {
+    margin: 0px 0px 0px 0px;
+}
+
+#heading-container {
+    height: 10%;
+}
+
+#theme_selector {
+    display: inline;
+    vertical-align: middle;
+    margin-left: 1%;
+    margin-right: 0px;
+    width: auto;
+    border-radius: 2px;
+    text-align: center;
+    font-size: 15px;
+}
+
+#heading {
+    width: 85%;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding-top: 1%;
+    color: white;
+    text-align: center;
+    font-family: sans-serif;
+    display:inline-block;
+    font-size: 40px;
+    vertical-align: middle;
+}
+
+.chart {
+    margin-left: 15.5%;
+    padding-left: 20%;
+    margin-right: 15.5%;
+    margin-top: 5%;
+    padding-top: 0%;
+    padding-bottom: 5%;
+    margin-bottom: 2%;
+    align-content: center;
+}
+
+.main text {
+    font: 10px sans-serif;
+}
+
+text.light {
+    fill: black;
+}
+
+text.dark {
+    fill: white;
+}
+
+.axis line, .axis path {
+    stroke: black;
+    fill: none;
+}
+
+body.light {
+    background-color: white;
+}
+
+body.dark {
+    background-color: #23221d;
+}
+
+circle.light {
+    fill: red;
+    stroke: red;
+}
+
+circle.dark {
+    fill: orange;
+    stroke: orange;
+}
+
+path.light {
+    stroke: black;
+}
+
+path.dark {
+    stroke: white;
+}
+
+.tooltip {
+   position: relative;
+   display: inline-block;
+   border-bottom: 1px dotted black;
+}
+
+div.tooltip {
+    position: absolute;
+    text-align: center;
+    width: auto;
+    height: auto;
+    padding: 2px;
+    font: 12px sans-serif;
+    background: lightsteelblue;
+    border: 0px;
+    border-radius: 8px;
+    pointer-events: none;
+}
