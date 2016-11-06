@@ -1,11 +1,9 @@
 var e = json_data.series['Series 1'].points;
 
-var data = [], lineGraph;
-for(var i = 0; i < e.length; i++) {
+var data = [], lineGraph, i;
+for(i = 0; i < e.length; i++) {
     data.push([e[i].coordinates[0], e[i].coordinates[1], Math.abs(e[i].coordinates[0] - e[i].coordinates[1])]);
 }
-
-visualize_roc_curve(data);
 
 function visualize_roc_curve(data) {
     var margin = {top: 0, right: 0.2*window.innerHeight, bottom: 0, left: 0.2*window.innerHeight},
@@ -24,7 +22,7 @@ function visualize_roc_curve(data) {
                   .append('svg:svg')
                   .attr('width', width + margin.right + margin.left)
                   .attr('height', height + margin.top + margin.bottom)
-                  .attr('class', 'chart')
+                  .attr('class', 'chart');
 
     var main = chart.append('g')
                     .attr('width', width)
@@ -49,13 +47,13 @@ function visualize_roc_curve(data) {
         .attr('class', 'main axis dark')
         .call(yAxis);
 
-    var g = main.append('svg:g'); 
+    var g = main.append('svg:g');
 
     var padding_y = Math.max(50, 0.07*window.innerHeight),
         padding_x = Math.max(60, 0.045*window.innerWidth);
 
-    var div = d3.select("body").append("div") 
-                               .attr("class", "tooltip")       
+    var div = d3.select("body").append("div")
+                               .attr("class", "tooltip")
                                .style("opacity", 0);
 
     g.append('text')
@@ -83,7 +81,6 @@ function visualize_roc_curve(data) {
             .attr('r', 10)
             .style('opacity', 0)
             .on("mouseover", function(d) {
-                    var $this = $(this);
                     var x = Math.pow(d[0],2),
                         y = Math.pow(1 - d[1],2),
                         cp = Math.pow(x + y, 0.5);
@@ -121,9 +118,9 @@ $('#theme_selector' ).change(function() {
 });
 
 function changeTheme(theme) {
-    var opposite_theme = theme === 'dark' ? 'light' : 'dark';
-    var text_fill = theme === 'dark' ? 'white' : 'black';
-    var line_stroke = theme === 'dark' ? 'orange' : 'green';
+    var opposite_theme = theme === 'dark' ? 'light' : 'dark',
+        text_fill = theme === 'dark' ? 'white' : 'black',
+        line_stroke = theme === 'dark' ? 'orange' : 'green';
     $('body').addClass(theme).removeClass(opposite_theme);
     $('circle').addClass(theme).removeClass(opposite_theme);
     $('.text').addClass(theme).removeClass(opposite_theme);
@@ -133,3 +130,5 @@ function changeTheme(theme) {
     $('.main text').css('fill', text_fill);
     $('#heading').css('color', text_fill);
 }
+
+visualize_roc_curve(data);
